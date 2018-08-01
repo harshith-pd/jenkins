@@ -1,0 +1,6 @@
+git init
+git remote set-url origin "https://<git-username>@github.com/<git-username>/<repo name>.git"
+make edits
+git add <files>
+git commit -m "commit message"
+git push -u origin master
