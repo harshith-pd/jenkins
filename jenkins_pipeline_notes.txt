@@ -1,0 +1,44 @@
+Pipelines are a suite of plugins enabling the integration of continuous delivery into jenkins
+Jenkins 2.x or above, pipeline plugin required
+
+Continuous delivery pipeline is an automated expression of the delivery process of the software from dev to cust written into a file "Jenkinsfile" which
+can be versioned & reviewed like any other code. Hence pipeline-as-a-code.
+
+Two ways of scripting a Jenkinsfile,
+- Declarative, which is a more readable/writeable/newer format to make the scripting easier, an individual block is called a directive
+i.e. stage, environment, input etc are directives, while stages
+
+pipeline{
+# this is the main key word in a declarative pipeline
+  agent any
+# agent directive telling which node to use
+  stages{
+# array defining the stages of the Pipeline
+    environment {
+# this directive defines the user-defined environment variables, scope is limited to teh block it is declared in
+      test_variable="test"
+    }
+    input{
+# input directive defining the input
+    Message "This input is needed to proceed with the build"
+    ok "Select"
+    parameters{
+# this directive defines the parameters if the build is a parameterized one, the build stops at this stage to accept the input parameters
+      booleanParam
+        defaultValue: true,
+        description: 'is it a pipeline',
+        name: 'pipes'
+    }
+    }
+    stage {
+# defines the individual stage of the application
+      steps{
+# defines the steps in the stage, like make build, generate product, etc. there are keywords for each plugin explained in detail @ https://jenkins.io/doc/pipeline/steps/
+        echo Hello
+        echo "${env.BUILD_ID}"
+# global variable reference @ http://ec2-54-213-229-220.us-west-2.compute.amazonaws.com:8080//pipeline-syntax/globals#env
+      }
+    }
+
+  }
+}
