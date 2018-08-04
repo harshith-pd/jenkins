@@ -17,9 +17,14 @@ Git commit -m "msg"
 Git push -u origin <feature1>
 
 Conflict resolution
+
 Git status
 <goto the conflict file, the conflict parts will be in between <<<<<<<< & >>>>>>>>>> separated by ======== delete the change you want remove>
 Git add <conflict file>
 Git push -u origin <feature1>
 Git merge master
 
+Delete branch
+
+Git branch -d <feature1>
+Git push origin --delete <feature1>
