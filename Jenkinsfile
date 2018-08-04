@@ -10,14 +10,14 @@ pipeline{
                 ok 'ok'
                 submitterParameter 'Pipy'
                 parameters {
-                    booleanParam defaultValue: true, description: '', name: 'you want it?'
+                    booleanParam defaultValue: true, description: 'is it a pipeline', name: 'pipes'
                 }
             }
 
             steps{
                 echo "Hello World ${NAME}"
-                echo "${you want it?}"
-            }  
+                echo "${pipes}"
+            }
         }
         stage("Trigger the rest"){
             steps{
@@ -26,4 +26,3 @@ pipeline{
         }
     }
 }
-
