@@ -9,7 +9,7 @@ Two ways of scripting a Jenkinsfile,
 -- which is a more readable/writeable/newer format to make the scripting easier
 -- sections :
   agent, specifies the node to be used for the build
-  post, specifies a list of post build actions to be performed
+  post, specifies a list of post build actions to be performed, sort of a try catch
   stages, collection of stages of the build
   steps, collection of the steps to be executed in each stage
 -- directives :
@@ -64,3 +64,5 @@ pipeline{
   }
 }
 #####################################################
+
+Now we will work on the Multibranch pipeline
