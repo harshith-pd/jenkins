@@ -5,9 +5,30 @@ Continuous delivery pipeline is an automated expression of the delivery process 
 can be versioned & reviewed like any other code. Hence pipeline-as-a-code.
 
 Two ways of scripting a Jenkinsfile,
-- Declarative, which is a more readable/writeable/newer format to make the scripting easier, an individual block is called a directive
-i.e. stage, environment, input etc are directives, while stages
+- Declarative,
+-- which is a more readable/writeable/newer format to make the scripting easier
+-- sections :
+  agent, specifies the node to be used for the build
+  post, specifies a list of post build actions to be performed
+  stages, collection of stages of the build
+  steps, collection of the steps to be executed in each stage
+-- directives :
+  environment, describes the build environment by setting the environment variables
+  options, such as build timeouts, etc
+  input, specifies input to the builds in the form of parameters
+  parameters, parameterized builds
+  triggers, type of build trigger
+  stage, individual build stage
+  tools, tools to be used for the build. these tools should be preconfigured in the Global tool config of Manage Jenkins
+  when, specifies the condition in which the the following pipeline script block should be executed
+-- Sequential stages :
+  stages within stages, nested stages
+-- Parallel:
+  used to execute stages in parallel on different nodes
+-- script:
+  used to execute a groovy script in the build steps
 
+################################################ Basic sample declarative pipeline,  advanced syntax @ https://jenkins.io/doc/book/pipeline/syntax/
 pipeline{
 # this is the main key word in a declarative pipeline
   agent any
@@ -42,3 +63,4 @@ pipeline{
 
   }
 }
+#####################################################
