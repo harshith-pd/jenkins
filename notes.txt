@@ -5,7 +5,7 @@ git add <files>
 git commit -m "commit message"
 git push -u origin master
 
-
+----------------------------------------------------------------------------
 Branching process
 
 git checkout master
@@ -16,6 +16,7 @@ Git add <file>
 Git commit -m "msg"
 Git push -u origin <feature1>
 
+----------------------------------------------------------------------------
 Conflict resolution
 
 Git status
@@ -24,6 +25,7 @@ Git add <conflict file>
 Git push -u origin <feature1>
 Git merge master
 
+----------------------------------------------------------------------------
 Delete branch
 
 Git branch -d <feature1>
