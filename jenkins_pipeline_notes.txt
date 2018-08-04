@@ -69,3 +69,5 @@ Now we will work on the Multibranch pipeline
 
 -- Create a project for the Multibranch Pipeline & point the git source to your repository
 -- Create multiple branches in the git repository
+-- it will scan all the features in the branch and create the build jobs for each of them based on the pipeline script
+-- as and when the features are deleted, the jobs get deleted as well
