@@ -16,7 +16,7 @@ pipeline{
 
             steps{
                 echo "Hello World ${NAME}"
-                echo ""${you want it?}
+                echo "${you want it?}"
             }  
         }
         stage("Trigger the rest"){
