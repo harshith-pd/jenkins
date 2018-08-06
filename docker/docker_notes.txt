@@ -1,0 +1,65 @@
+Docker
+
+
+
+
+----- Docker uses a client-server architecture
+----- DOCKER CLIENT : the docker command
+----- DOCKER DAEMON : a service that has to be running for the containers to work. It handles all the operations related to containers, receives commands from the docker client
+----- DOCKER IMAGES : the building blocks that produce a running container when used as docker run, every command/change is added as a layer on top of the previous/existing image
+----- DOCKER FILE : file consisting of the commands the user calls for assembling the  docker image
+----- CONTAINER : a working instance of a docker image
+----- DOCKER REGISTRY : its like a repository of docker images like GitHub for code repositories
+
+During the run command
+ 1. The Docker client contacts the Docker daemon.
+ 2. The Docker daemon pulls the "xyz" image from the Docker Hub.
+ 3. The Docker daemon creats a new container from that image which runs the
+    executable that produces the output
+ 4. The Docker daemon streams that output to the Docker client, which sends it
+    to your terminal as output.
+
+
+NOTE: everywhere the mapping occurs, the format is <host> <container>
+
+Common docker commands:
+Installation:
+brew cask install docker  ----- installs complete docker set : docker command, docker-machine, docker-compose
+
+docker version
+docker run hello-world
+docker ps 
+
+Build the docker file with name
+search for the docker image
+Pull the docker image
+Run the docker image
+Remove the docker image
+
+--------------------------------------------------
+DOCKER RUN...
+
+-- docker run -d #run the container detached, in the background
+	     	-p 80:80 # publish the container ports to the host, -P to publish all container ports to random host ports
+		--name <name of the container> # this is going to list the name of the container in the ps
+		<image name>	
+-- Once started, all the operations related to the container are worked upon using the docker container command:
+-docker container ls
+-Docker container stop/start/rm/ls <container name>
+-docker 
+
+---------------------------------------------------
+
+
+Advtg.
+1) no inconsistencies, if it works on my comp, it runs on any comp with docker
+2) sandboxing of application
+3) pre-requisites resolved
+4) no hassle of running and maintaining VMs
+5) can be spun up in minutes
+6) use less space & fewer resources
+
+Features
+1) docker uses the special features of the UNIX file system(it simply creates the unix file system) by sharing the kernel to create these isolated environments
+2) Docker file is built up to create an image = Base OS + software dependencies + software
+3) then these images are run to create container

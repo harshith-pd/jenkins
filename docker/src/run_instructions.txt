@@ -1,0 +1,4 @@
+
+
+docker build -t <docker image name>
+docker run -d -p 8080:80 -v /Users/harshith/Desktop/jenkins\ docs/git_pipeline/docker/src:/var/www/html --name <container name> <image name>
