@@ -1,0 +1,6 @@
+- Docker compose is used to orchestrate dependencies between containers
+- docker compose files are used for this purpose and have the extension of .yml
+- In this we can 
+	- spin up multiple images as containers
+	- specify the properties for the containers
+	- setup the dependencies between the containers, so in writing the file we would spin-up the container which is the basic need
